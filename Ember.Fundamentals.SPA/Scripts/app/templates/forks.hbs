@@ -1,0 +1,27 @@
+﻿    <h4>FORKS</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each item in model}}
+            <tr>
+                <td><img {{bind-attr src=item.owner.avatar_url}} style="width:100px" /></td>
+                <td>
+                    {{item.full_name}}
+                    <hr />
+                    <p class="text-muted">{{fromDate item.created_at}}</p>
+                </td>
+            </tr>{{else}}
+            <tr>
+                <td>
+                    <p class="text-muted">No Forks</p>
+                </td>
+                <td></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>

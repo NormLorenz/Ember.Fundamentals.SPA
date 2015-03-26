@@ -1,0 +1,28 @@
+﻿    <h4>Commits</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each item in model}}
+            <tr>
+                <td><img {{bind-attr src=item.author.avatar_url}} style="width:100px" /></td>
+                <td>
+                    <h5>Sha: {{item.sha}}</h5>
+                    <p>{{item.commit.message}}</p>
+                    <hr />
+                    <p class="text-muted">{{fromDate item.created_at}}</p>
+                </td>
+            </tr>{{else}}
+            <tr>
+                <td>
+                    <p class="text-muted">No Commits</p>
+                </td>
+                <td></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>

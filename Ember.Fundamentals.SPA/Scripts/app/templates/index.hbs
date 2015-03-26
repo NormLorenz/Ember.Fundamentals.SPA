@@ -1,0 +1,13 @@
+﻿    <h1>Github Explorer</h1>
+    <hr />
+    <p>This is the Github explorer for all of our favorite developers</p>
+    <ul>
+        {{#each item in model}}
+        <li>{{#link-to 'user' item.login}}{{item.name}}{{/link-to}}</li>
+        {{/each}}
+    </ul>
+    <p>
+        <button class="btn btn-success" {{action "clickMe" }}>Click Me</button>
+    </p>
+    <p>&copy;&nbsp;{{longYear renderedOn}} - My ASP.NET Application</p>
+
